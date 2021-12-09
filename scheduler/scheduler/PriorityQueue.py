@@ -15,4 +15,4 @@ class PriorityQueue:
                     result = self.queue[len(self.queue)-1-i]
                     del self.queue[len(self.queue)-1-i]
                     return result
-        return None
+        return False

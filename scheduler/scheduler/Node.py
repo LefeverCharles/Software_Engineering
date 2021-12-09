@@ -13,11 +13,11 @@ class Node:
         self.available_time = self._get_next_day()
         self.list_of_requests =[]
 
-    def __init__(self,is_gpu):
+    def __init__(self, is_gpu):
         self.is_gpu = is_gpu
         self.available_time = self._get_next_day()
         self.list_of_requests =[]
 
-    def add_request(self,request):
+    def add_request(self, request, actual_time):
         self.list_of_requests.append(request)
-        self.available_time += dt.timedelta(hours=request.req_time)
+        self.available_time = actual_time + request.req_time
